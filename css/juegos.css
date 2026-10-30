@@ -1,0 +1,269 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body.pagina-juego {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Arial Narrow", "Liberation Sans Narrow", sans-serif;
+}
+
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+   ========================================== */
+
+.pantalla-juego {
+    width: 100%;
+    padding: 65px 30px 40px;
+}
+
+
+/* ==========================================
+   TÍTULO
+   ========================================== */
+
+.pagina-juego .titulo-juego {
+    margin: 0 0 75px;
+    text-align: center;
+    font-size: 64px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   DISTRIBUCIÓN DEL TABLERO Y LOS JUGADORES
+   ========================================== */
+
+.zona-juego {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 120px;
+}
+
+
+/* ==========================================
+   TABLERO DE OTELO
+   ========================================== */
+
+.tablero {
+    display: grid;
+
+    /* Ocho columnas y ocho filas iguales */
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+
+    width: 480px;
+    height: 480px;
+    flex-shrink: 0;
+
+    background-color: #79d968;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   CASILLAS DEL TABLERO
+   ========================================== */
+
+.casilla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    padding: 0;
+
+    /* Las líneas divisorias */
+    border: none;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+
+    background-color: #79d968;
+    cursor: pointer;
+}
+
+/* Eliminar el borde derecho de la última columna */
+.casilla:nth-child(8n) {
+    border-right: none;
+}
+
+/* Eliminar el borde inferior de la última fila */
+.casilla:nth-child(n + 57) {
+    border-bottom: none;
+}
+
+/* Evitar cambios de color automáticos del navegador */
+.casilla:hover {
+    background-color: #79d968;
+}
+
+/* Indicador visual al pasar el ratón */
+.casilla:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: -4px;
+}
+
+
+/* ==========================================
+   FICHAS BLANCAS Y NEGRAS
+   ========================================== */
+
+.ficha {
+    display: block;
+
+    width: 78%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.ficha-blanca {
+    background-color: #f5f5f5;
+}
+
+.ficha-negra {
+    background-color: #000000;
+}
+
+
+/* ==========================================
+   PANELES DE LOS JUGADORES
+   ========================================== */
+
+.panel-jugadores {
+    display: flex;
+    flex-direction: column;
+    gap: 126px;
+}
+
+.panel-jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 132px;
+    min-height: 177px;
+
+    padding: 35px 10px 12px;
+    background-color: #d9d9d9;
+}
+
+.panel-jugador .ficha {
+    width: 40px;
+}
+
+.panel-jugador p {
+    margin: 25px 0 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.panel-jugador .contador-fichas {
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   JUGADOR ACTIVO
+   ========================================== */
+
+.panel-jugador.jugador-activo {
+    outline: 3px solid #79d968;
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   INFORMACIÓN DE LA PARTIDA
+   ========================================== */
+
+.informacion-partida {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.informacion-partida p {
+    margin: 0;
+}
+
+#mensajeJuego {
+    min-height: 24px;
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .pantalla-juego {
+        padding: 35px 15px;
+    }
+
+    .pagina-juego .titulo-juego {
+        margin-bottom: 40px;
+        font-size: 42px;
+    }
+
+    .zona-juego {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .tablero {
+        width: min(480px, 90vw);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .panel-jugadores {
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .panel-jugador {
+        width: 120px;
+        min-height: 150px;
+        padding-top: 20px;
+    }
+
+    .panel-jugador p {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    .panel-jugador .contador-fichas {
+        margin-top: 8px;
+        font-size: 15px;
+    }
+
+    .informacion-partida {
+        font-size: 18px;
+    }
+}
