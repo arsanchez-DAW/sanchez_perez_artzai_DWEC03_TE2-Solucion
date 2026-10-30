@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Otello - Juego Intermedio</title>
+
+    <link rel="stylesheet" href="css/juegos.css">
+    <script type="module" src="js/juego.js"></script>
+</head>
+
+<body class="pagina-juego">
+
+    <main class="pantalla-juego">
+
+        <h1 class="titulo-juego">Juego Intermedio</h1>
+
+        <section class="zona-juego">
+
+            <div
+                id="tablero"
+                class="tablero"
+                role="grid"
+                aria-label="Tablero de Otelo"
+            ></div>
+
+            <aside class="panel-jugadores">
+
+                <div class="panel-jugador" id="panelJugador1">
+                    <div class="ficha ficha-blanca"></div>
+                    <p>Jugador 1</p>
+                    <p class="contador-fichas">
+                        Fichas: <span id="fichasJugador1">2</span>
+                    </p>
+                </div>
+
+                <div class="panel-jugador" id="panelJugador2">
+                    <div class="ficha ficha-negra"></div>
+                    <p>Jugador 2</p>
+                    <p class="contador-fichas">
+                        Fichas: <span id="fichasJugador2">2</span>
+                    </p>
+                </div>
+
+            </aside>
+
+        </section>
+
+        <section class="informacion-partida">
+
+            <p id="indicadorTurno"></p>
+            <p>Tiempo restante: <span id="contadorTiempo">30</span> segundos</p>
+            <p id="mensajeAviso" aria-live="polite"></p>
+
+
+
+        </section>
+
+    </main>
+
+</body>
+</html>

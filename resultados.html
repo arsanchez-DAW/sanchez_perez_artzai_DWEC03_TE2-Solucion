@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Otello - Resultados</title>
+    <link rel="stylesheet" href="css/resultados.css">
+    <script type="module" src="js/resultados.js"></script>
+</head>
+<body class="pagina-resultados">
+    <main class="contenedor-resultados">
+        <section class="panel-resultados">
+            <h1 class="titulo-resultados">Fin de la partida</h1>
+
+            <div class="separador"></div>
+
+            <h2 id="resultadoFinal" class="ganador">Cargando resultado...</h2>
+
+            <p class="subtitulo-resultados">Puntuación final</p>
+
+            <div class="puntuaciones">
+                <div class="puntuacion jugador-blanco">
+                    <div class="ficha ficha-blanca"></div>
+                    <p>Jugador 1</p>
+                    <span id="resultadoBlancas" class="numero-fichas">0</span>
+                    <span class="nombre-fichas">fichas</span>
+                </div>
+
+                <div class="puntuacion jugador-negro">
+                    <div class="ficha ficha-negra"></div>
+                    <p>Jugador 2</p>
+                    <span id="resultadoNegras" class="numero-fichas">0</span>
+                    <span class="nombre-fichas">fichas</span>
+                </div>
+            </div>
+
+            <div class="botones-resultados">
+                <button id="botonRepetir" class="boton boton-principal" type="button">
+                    Volver al menu de seleccion de dificultad
+                </button>
+
+                <button id="botonSalir" class="boton boton-secundario" type="button">
+                    Cerrar sesión
+                </button>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
